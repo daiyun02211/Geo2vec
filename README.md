@@ -14,8 +14,10 @@ input <- import.bed(system.file("extdata", "example.bed", package = "Geo2vec"))
 ```
 It is recommended to use the function **encGeo** to generate the encoding. Different encodings can be selected by the parameter *type*:
 ```
+library(EnsDb.Hsapiens.v86)
 encoding <- encGeo(input, EnsDb.Hsapiens.v86, type='onehotTX', window=50, exon_only=T, long_tx=T, mRNA=T)
 encoding <- encGeo(input, EnsDb.Hsapiens.v86, type='landmarkTX', long_tx=T, mRNA=T)
 encoding <- encGeo(input, EnsDb.Hsapiens.v86, type='gridTX', ngrid=40, exon_only=T, long_tx=T, mRNA=T)
 encoding <- encGeo(input, EnsDb.Hsapiens.v86, type='chunkTX', exon_only=T, long_tx=T, mRNA=T)
 ```
+The current version of the package supports transcription annotation packages in the form of TxDb (e.g., TxDb.Hsapiens.UCSC.hg19.knownGene) and EnsDb.
