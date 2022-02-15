@@ -1,4 +1,6 @@
 # Geo2vec
+## Introduction
+**Geo2vec** (**geo**graphic representation of transcript as **vec**tors) explored different strategies for encoding sub-molecular geographic information of ribonucleotides. Three encoding methods, i.e., landmarkTX, gridTX, and chunkTX, as well as the widely used one-hot method are currently supported. LandmarkTX is a lightweight encoding scheme directly capturing the position of the target ribonucleotide (or site) relative to transcript landmarks, i.e., the distances to the two edges of the exon, coding sequence (CDS), and transcript, respectively. Meanwhile, gridTX and chunkTX are designed to describe the landscape of the entire transcript through grids (of equal widths) or regions (with unequal width), respectively. 
 ## Installation
 To install Geo2vec from Github, please use the following command in R consol.
 ```
