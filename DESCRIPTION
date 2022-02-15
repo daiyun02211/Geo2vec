@@ -1,0 +1,27 @@
+Package: Geo2vec
+Type: Package
+Title: Geographic encoding of transcripts for epitranscriptomic modifications prediction.
+Version: 1.0.0
+Authors@R: 
+    person("Daiyun", "Huang", email = "daiyun.huang@outlook.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-0367-7165"))
+Description: Geo2vec provides transcript geographic encodings for machine learning prediction of the epitranscriptomic modifications.
+License: GPL (>= 2)
+Imports: magrittr, GenomicRanges, Biostrings, BSgenome, IRanges, GenomicFeatures, stats
+Suggests: 
+    parallel,
+    rtracklayer,
+    BSgenome.Hsapiens.UCSC.hg19,
+    TxDb.Hsapiens.UCSC.hg19.knownGene,
+    BSgenome.Hsapiens.UCSC.hg38,
+    TxDb.Hsapiens.UCSC.hg38.knownGene,
+    EnsDb.Hsapiens.v75,
+    EnsDb.Hsapiens.v79,
+    EnsDb.Hsapiens.v86,
+    AnnotationHub,
+    knitr,
+    rmarkdown
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+VignetteBuilder: knitr
