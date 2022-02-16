@@ -56,7 +56,7 @@ resizeChunk <- function(chunkTX, window=17, unify_strand=TRUE, region=FALSE){
   }else{
     idx <- which(meta$target == 1)
     if (unify_strand){
-      if (strand(chunk)@values %>% as.vector() == '+'){
+      if (strand(chunkTX)@values %>% as.vector() == '+'){
         pad[max(window-idx+2, 1):min(2*window+1, window+1+nrow(meta)-idx),] = 
           meta[max(idx-window, 1):min(idx+window, nrow(meta)),]
       } else {
