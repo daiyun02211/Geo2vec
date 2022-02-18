@@ -21,11 +21,11 @@ geo2df <- function(GRanges, org_site_id=NULL){
   out_names <- names(GRanges) %>% strsplit('[.]') %>% unlist()
   out_names <- out_names[seq(1, length(out_names), 2)]
   if (!is.null(org_site_id)){
-    out_site_map <- out_names %>% strsplit('_') %>% unlist()
+    out_site_map <- out_names %>% strsplit('-') %>% unlist()
     out_site_id <- out_site_map[seq(1, length(out_site_map), 2)] %>% as.integer()
     reindex_site_id <- org_site_id[out_site_id]
     out_tx_id <- out_site_map[seq(2, length(out_site_map), 2)]
-    out_names <- paste0(reindex_site_id, '_', out_tx_id)
+    out_names <- paste0(reindex_site_id, '-', out_tx_id)
   }
   range_df <- data.frame(mapping=out_names,
                          seqnames=seqnames(GRanges),
