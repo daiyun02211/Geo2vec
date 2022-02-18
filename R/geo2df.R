@@ -17,8 +17,10 @@
 #' @import GenomicRanges
 #' @export
 geo2df <- function(GRanges, org_site_id=NULL){
-  if (type(GRanges) == 'list')
+  if (class(GRanges) == 'GRanges'){
+  } else {
     GRanges <- unlist(GRanges)
+  }
   out_names <- names(GRanges) %>% strsplit('[.]') %>% unlist()
   out_names <- out_names[seq(1, length(out_names), 2)]
   if (!is.null(org_site_id)){
