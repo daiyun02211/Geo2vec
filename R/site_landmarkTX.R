@@ -37,6 +37,7 @@ site_landmarkTX <- function(x, txdb, long_tx=TRUE, mRNA=TRUE){
   }else{
     seqlevelsStyle(x) <- 'UCSC'
     tx <- transcripts(txdb)
+    names(tx) <- tx$tx_name
     exbytx <- exonsBy(txdb, by='tx', use.names=T)
     if (mRNA){
       cdsbytx <- cdsBy(txdb, by='tx', use.names=TRUE)
@@ -64,8 +65,6 @@ site_landmarkTX <- function(x, txdb, long_tx=TRUE, mRNA=TRUE){
   names(x) <- map_name
   
   # Dist to site-containing transcript
-  tx <- transcripts(txdb)
-  names(tx) <- tx$tx_name
   map2tx <- pmapToTranscripts(x, tx[target_name])
   x$tx_u5 <- start(map2tx) - 1
   x$tx_u3 <- width(tx[target_name]) - end(map2tx)
