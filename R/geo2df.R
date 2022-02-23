@@ -36,7 +36,7 @@ geo2df <- function(GRanges, org_site_id=NULL){
                          end=end(GRanges),
                          strand=strand(GRanges))
   out_df <- mcols(GRanges)
-  out_df <- cbind(range_df, out_df)
+  out_df <- cbind(range_df, out_df, row.names = NULL)
   out_df %>% head()
   row.names(out_df) <- 1:nrow(out_df)
   return(out_df)
